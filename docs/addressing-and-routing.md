@@ -1,41 +1,39 @@
----
-
-## 📊 Addressing & VLAN Plan
+# 📊 Addressing & VLAN Plan
 
 ### Campus LAN (Headquarters)
 The HQ infrastructure utilizes EIGRP Named-Mode across core and distribution layers, with strict boundary segregation via tailored VLAN allocation:
 
 | VLAN ID | Subnet | Gateway Placement | Description / Purpose |
 | :--- | :--- | :--- | :--- |
-| **VLAN 10** | `10.10.10.0/24` | `10.10.10.254` (VRRP) | HR |
-| **VLAN 20** | `10.10.20.0/24` | `10.10.20.254` (VRRP) | IT |
-| **VLAN 30** | `10.10.30.0/24` | `10.10.30.254` (VRRP) | Management |
-| **VLAN 40** | `10.10.40.0/24` | `10.10.40.254` (VRRP) | Sales |
-| **VLAN 50** | `10.10.50.0/24` | `10.10.50.254` (VRRP) | Guest Network |
-| **VLAN 99** | `10.10.99.0/24` | N/A | Native VLAN (Unused / Hardened) |
+| **VLAN 10** | 10.10.10.0/24 | 10.10.10.254 (VRRP) | HR |
+| **VLAN 20** | 10.10.20.0/24 | 10.10.20.254 (VRRP) | IT |
+| **VLAN 30** | 10.10.30.0/24 | 10.10.30.254 (VRRP) | Management |
+| **VLAN 40** | 10.10.40.0/24 | 10.10.40.254 (VRRP) | Sales |
+| **VLAN 50** | 10.10.50.0/24 | 10.10.50.254 (VRRP) | Guest Network |
+| **VLAN 99** | 10.10.99.0/24 | N/A | Native VLAN (Unused / Hardened) |
 
 ### Remote Branch LAN
 The Remote Branch relies on an OSPF Area 1 Stub architecture to maintain a lightweight routing table:
 
 | VLAN ID | Subnet | Gateway Placement | Description / Purpose |
 | :--- | :--- | :--- | :--- |
-| **VLAN 110** | `10.10.110.0/24` | `10.10.110.254` (VRRP) | HR |
-| **VLAN 120** | `10.10.120.0/24` | `10.10.120.254` (VRRP) | IT |
-| **VLAN 130** | `10.10.130.0/24` | `10.10.130.254` (VRRP) | Management |
-| **VLAN 140** | `10.10.140.0/24` | `10.10.140.254` (VRRP) | Sales |
-| **VLAN 150** | `10.10.150.0/24` | `10.10.150.254` (VRRP) | Guest Network |
-| **VLAN 199** | `10.10.199.0/24` | N/A | Native VLAN (Unused / Hardened) |
+| **VLAN 110** | 10.10.110.0/24 | 10.10.110.254 (VRRP) | HR |
+| **VLAN 120** | 10.10.120.0/24 | 10.10.120.254 (VRRP) | IT |
+| **VLAN 130** | 10.10.130.0/24 | 10.10.130.254 (VRRP) | Management |
+| **VLAN 140** | 10.10.140.0/24 | 10.10.140.254 (VRRP) | Sales |
+| **VLAN 150** | 10.10.150.0/24 | 10.10.150.254 (VRRP) | Guest Network |
+| **VLAN 199** | 10.10.199.0/24 | N/A | Native VLAN (Unused / Hardened) |
 
 ### WAN & Overlay Point-to-Point Interconnects
 
 | Segment / Link | IP Subnet | Allocation | Routing Domain |
 | :--- | :--- | :--- | :--- |
-| **HQ Link to ISP-2 (Primary)** | `200.200.200.0/30` | HQ: `.1`, ISP-2: `.2` | eBGP (AS 500 ↔ AS 200) |
-| **HQ Link to ISP-1 (Backup)** | `100.100.100.0/30` | HQ: `.1`, ISP-1: `.2` | eBGP (AS 500 ↔ AS 100) |
-| **Branch Link to ISP-2 (Primary)** | `200.200.200.4/30` | Branch: `.5`, ISP-2: `.6` | eBGP (AS 500 ↔ AS 200) |
-| **Branch Link to ISP-1 (Backup)** | `100.100.100.4/30` | Branch: `.5`, ISP-1: `.6` | eBGP (AS 500 ↔ AS 100) |
-| **DMVPN Tunnel 1 Overlay** | `172.16.1.0/24` | Hub: `.1`, Spoke: `.2` | OSPF Area 0 (Primary Path) |
-| **DMVPN Tunnel 2 Overlay** | `172.16.2.0/24` | Hub: `.1`, Spoke: `.2` | OSPF Area 0 (Backup Path) |
+| **HQ Link to ISP-2 (Primary)** | 200.200.200.0/30 | HQ: .1, ISP-2: .2 | eBGP (AS 500 ↔ AS 200) |
+| **HQ Link to ISP-1 (Backup)** | 100.100.100.0/30 | HQ: .1, ISP-1: .2 | eBGP (AS 500 ↔ AS 100) |
+| **Branch Link to ISP-2 (Primary)** | 200.200.200.4/30 | Branch: .5, ISP-2: .6 | eBGP (AS 500 ↔ AS 200) |
+| **Branch Link to ISP-1 (Backup)** | 100.100.100.4/30 | Branch: .5, ISP-1: .6 | eBGP (AS 500 ↔ AS 100) |
+| **DMVPN Tunnel 1 Overlay** | 172.16.1.0/24 | Hub: .1, Spoke: .2 | OSPF Area 0 (Primary Path) |
+| **DMVPN Tunnel 2 Overlay** | 172.16.2.0/24 | Hub: .1, Spoke: .2 | OSPF Area 0 (Backup Path) |
 
 ---
 
