@@ -7,6 +7,13 @@ The objective of this project was to design and validate an enterprise network t
 ---
 
 ## 🌐 Enterprise Network Overview
+---
+
+## 🗺️ Network Topology
+
+![Enterprise Network Topology](network_design.png)
+
+*Note: The source EVE-NG `.unl` topology file is available in the root directory of this repository for lab replication.*
 
 A high-impact, scannable overview of the implemented architecture:
 
