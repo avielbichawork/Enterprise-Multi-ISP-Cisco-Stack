@@ -5,24 +5,24 @@ The HQ infrastructure utilizes EIGRP Named-Mode across core and distribution lay
 
 | VLAN ID | Subnet | Gateway Placement | Description / Purpose |
 | :--- | :--- | :--- | :--- |
-| **VLAN 10** | 10.10.10.0/24 | 10.10.10.254 (VRRP) | HR |
-| **VLAN 20** | 10.10.20.0/24 | 10.10.20.254 (VRRP) | IT |
-| **VLAN 30** | 10.10.30.0/24 | 10.10.30.254 (VRRP) | Management |
-| **VLAN 40** | 10.10.40.0/24 | 10.10.40.254 (VRRP) | Sales |
-| **VLAN 50** | 10.10.50.0/24 | 10.10.50.254 (VRRP) | Guest Network |
-| **VLAN 99** | 10.10.99.0/24 | N/A | Native VLAN (Unused / Hardened) |
+| **VLAN 10** | 192.168.10.0/24 | 10.10.10.254 (VRRP) | HR |
+| **VLAN 20** | 192.168.20.0/24 | 10.10.20.254 (VRRP) | IT |
+| **VLAN 30** | 192.168.30.0/24 | 10.10.30.254 (VRRP) | Management |
+| **VLAN 40** | 192.168.40.0/24 | 10.10.40.254 (VRRP) | Sales |
+| **VLAN 50** | 192.168.50.0/24 | 10.10.50.254 (VRRP) | Guest Network |
+| **VLAN 99** | 192.168.99.0/24 | N/A | Native VLAN (Unused / Hardened) |
 
 ### Remote Branch LAN
 The Remote Branch relies on an OSPF Area 1 Stub architecture to maintain a lightweight routing table:
 
 | VLAN ID | Subnet | Gateway Placement | Description / Purpose |
 | :--- | :--- | :--- | :--- |
-| **VLAN 110** | 10.10.110.0/24 | 10.10.110.254 (VRRP) | HR |
-| **VLAN 120** | 10.10.120.0/24 | 10.10.120.254 (VRRP) | IT |
-| **VLAN 130** | 10.10.130.0/24 | 10.10.130.254 (VRRP) | Management |
+| **VLAN 110** | 192.168.110.0/24 | 10.10.110.254 (VRRP) | HR |
+| **VLAN 120** | 192.168.120.0/24 | 10.10.120.254 (VRRP) | IT |
+| **VLAN 130** | 10.10192.168.130.0/24 | 10.10.130.254 (VRRP) | Management |
 | **VLAN 140** | 10.10.140.0/24 | 10.10.140.254 (VRRP) | Sales |
-| **VLAN 150** | 10.10.150.0/24 | 10.10.150.254 (VRRP) | Guest Network |
-| **VLAN 199** | 10.10.199.0/24 | N/A | Native VLAN (Unused / Hardened) |
+| **VLAN 150** | 192.168.150.0/24 | 10.10.150.254 (VRRP) | Guest Network |
+| **VLAN 199** | 192.168.199.0/24 | N/A | Native VLAN (Unused / Hardened) |
 
 ### WAN & Overlay Point-to-Point Interconnects
 
