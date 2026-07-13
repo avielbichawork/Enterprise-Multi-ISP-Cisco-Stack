@@ -43,3 +43,11 @@ The core engineering objectives behind the technological choices made in this pr
 * ✔ **Enterprise Scalability:** Designed to support future branch expansion using a scalable DMVPN architecture.
 * ✔ **Routing Plane Isolation:** Strict separation maintained between WAN service provider boundaries and internal routing domains.
 * ✔ **Future NGFW Readiness:** The topology was designed with dedicated transit links to allow future insertion of a Next-Generation Firewall (NGFW) without redesigning the Layer 3 architecture.
+* ---
+
+## 🛠️ Detailed Technical Documentation
+
+To keep the overview concise, the complete low-level engineering specifications, subnet allocations, and failover design parameters have been segmented into dedicated architectural documents:
+
+* 📊 **[Addressing & VLAN Plan](docs/addressing-and-routing.md)** – Comprehensive subnet tables for HQ LAN, Remote Branch, and WAN point-to-point links.
+* 🔄 **[WAN Path Selection & Failover Matrix](docs/addressing-and-routing.md#-wan-path-selection--failover-matrix)** – Detailed logic covering IP SLA configuration, Object Tracking, and eBGP/OSPF convergence behaviors during link failures.
