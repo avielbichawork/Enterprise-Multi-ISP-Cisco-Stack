@@ -1,14 +1,3 @@
-# 🔍 Infrastructure Verification Guide
-
-This document outlines the systematic verification commands used to validate control plane stability, overlay infrastructure health, and deterministic data plane forwarding behavior across the multi-vendor environment.
-
----
-
-## 🌐 1. Dynamic Routing Verification
-
-### Underlay BGP Peer Validation
-To verify that the Edge Routers successfully establish eBGP peerings with the service providers (ISP-1 and ISP-2) and receive correct routing advertisements:
-
 ```baseline
 HQ-ROUTER#show ip bgp su
 BGP router identifier 200.200.200.1, local AS number 500
@@ -22,12 +11,10 @@ BGP table version is 10, main routing table version 10
 BGP using 3044 total bytes of memory
 BGP activity 7/0 prefixes, 12/0 paths, scan interval 60 secs
 
-
-
 Neighbor        V        AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down    State/PfxRcd
 100.100.100.2   4       100     296     296        10    0    0 04:23:32         5
 200.200.200.2   4       200     296     297        10    0    0 04:23:42         5
-
+קטע קוד
 HQ-ROUTER#show ip bgp neighbors 200.200.200.2 advertised-routes 
 BGP table version is 10, local router ID is 200.200.200.1
 Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
