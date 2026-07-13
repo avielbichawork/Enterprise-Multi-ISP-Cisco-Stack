@@ -9,7 +9,7 @@ This document outlines the systematic verification commands used to validate con
 ### Underlay BGP Peer Validation
 To verify that the Edge Routers successfully establish eBGP peerings with the service providers (ISP-1 and ISP-2) and receive correct routing advertisements:
 
-```bash
+**Baseline Expected Output:**
 HQ-ROUTER#show ip bgp su
 BGP router identifier 200.200.200.1, local AS number 500
 BGP table version is 10, main routing table version 10
