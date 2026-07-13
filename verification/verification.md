@@ -24,7 +24,7 @@ BGP activity 7/0 prefixes, 12/0 paths, scan interval 60 secs
 
 Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
 100.100.100.2   4          100     296     296       10    0    0 04:23:32        5
-200.200.200.2   4          200     296     297       10    0    0 04:23:42        5
+200.200.200.2   4          200     296     297       10    0    0 04:23:42        5 '''
 קטע קוד
 HQ-ROUTER#show ip bgp neighbors 200.200.200.2 advertised-routes 
 BGP table version is 10, local router ID is 200.200.200.1
