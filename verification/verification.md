@@ -73,3 +73,41 @@ P 0.0.0.0/0, 1 successors, FD is 131072000
 P 192.168.50.0/24, 2 successors, FD is 131727360
         via 10.0.0.1 (131727360/1310720), Ethernet0/1
         via 10.0.0.5 (131727360/1310720), Ethernet0/0
+
+
+🔒 2. DMVPN Phase-3 & IPsec Validation
+Crypto ISAKMP & NHRP/DMVPN State
+Verification output confirming that ISAKMP SAs are active (QM_IDLE) and that the NHRP dynamic mappings are correctly established on the DMVPN Hub interface:
+==========================================================================
+HQ-ROUTER# show crypto isakmp sa
+==========================================================================
+IPv4 Crypto ISAKMP SA
+dst             src             state        conn-id status
+200.200.200.1   200.200.200.5   QM_IDLE           1002 ACTIVE
+100.100.100.1   100.100.100.5   QM_IDLE           1001 ACTIVE
+
+
+==========================================================================
+HQ-ROUTER# show ip nhrp brief
+==========================================================================
+   Target             Via             NBMA            Mode   Intfc   Claimed 
+     172.16.100.2/32 172.16.100.2    100.100.100.5   dynamic  Tu1     <   >
+       172.16.0.2/32 172.16.0.2      200.200.200.5   dynamic  Tu2     <   >
+
+
+==========================================================================
+HQ-ROUTER# show dmvpn
+==========================================================================
+Interface: Tunnel1, IPv4 NHRP Details 
+Type:Hub, NHRP Peers:1, 
+
+ # Ent  Peer NBMA Addr Peer Tunnel Add State  UpDn Tm Attrb
+ ----- --------------- --------------- ----- -------- -----
+     1 100.100.100.5      172.16.100.2    UP 04:29:11     D
+
+Interface: Tunnel2, IPv4 NHRP Details 
+Type:Hub, NHRP Peers:1, 
+
+ # Ent  Peer NBMA Addr Peer Tunnel Add State  UpDn Tm Attrb
+ ----- --------------- --------------- ----- -------- -----
+     1 200.200.200.5        172.16.0.2    UP 04:28:18     D
