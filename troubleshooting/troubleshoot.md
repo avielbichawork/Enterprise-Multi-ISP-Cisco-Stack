@@ -24,7 +24,7 @@ When internal hosts attempted to access the internet via ISP-1, the router conti
 
 ### 🛠️ Solution & Resolution Configuration
 
-To fix this, we implemented **Route-Map-based Dynamic NAT** tied to the physical egress interfaces, coupled with strict NAT translation timers to force rapid session clearing.
+To fix this, I implemented **Route-Map-based Dynamic NAT** tied to the physical egress interfaces, coupled with strict NAT translation timers to force rapid session clearing.
 
 ```text
 ! 1. Define local subnet access list
