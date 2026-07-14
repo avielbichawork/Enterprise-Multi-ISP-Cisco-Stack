@@ -59,6 +59,3 @@ To review the live state validation of the network control plane, DMVPN overlay,
 
 [![Verification Guide](https://img.shields.io/badge/Documentation-Verification_Guide-blue?style=for-the-badge&logo=read-the-docs&logoColor=white)](verification/verification.md)
 
-👉 **[Click here to view the Live Verification & CLI Output Guide](verification/verification.md)**
-
----
