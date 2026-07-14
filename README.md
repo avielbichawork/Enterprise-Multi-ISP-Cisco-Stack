@@ -51,3 +51,14 @@ To keep the overview concise, the complete low-level engineering specifications,
 
 * 📊 **[Addressing & VLAN Plan](docs/addressing-and-routing.md)** – Comprehensive subnet tables for HQ LAN, Remote Branch, and WAN point-to-point links.
 * 🔄 **[WAN Path Selection & Failover Matrix](docs/addressing-and-routing.md#-wan-path-selection--failover-matrix)** – Detailed logic covering IP SLA configuration, Object Tracking, and eBGP/OSPF convergence behaviors during link failures.
+* ---
+
+## 🔍 Infrastructure Verification & Validation
+
+To review the live state validation of the network control plane, DMVPN overlay, security associations, and high-availability tracking, please refer to the complete verification document:
+
+[![Verification Guide](https://img.shields.io/badge/Documentation-Verification_Guide-blue?style=for-the-badge&logo=read-the-docs&logoColor=white)](verification/verification.md)
+
+👉 **[Click here to view the Live Verification & CLI Output Guide](verification/verification.md)**
+
+---
