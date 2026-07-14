@@ -41,13 +41,13 @@ I re-adjusted the default redistribution seed metric with higher, realistic band
 router eigrp HQ-NET
  address-family ipv4 autonomous-system 1
   topology base
-   redistribute ospf 1 metric 100000 10 255 1 1500
+   redistribute ospf 1 metric 100000 1000000 255 1 1500
 ! ==========================================================================
 ! 1. Route-Maps for EIGRP to OSPF Redistribution
 ! ==========================================================================
-! Block routes that were originally injected from OSPF (Tag 110) to prevent loops
+! Block routes that were originally injected from OSPF (Tag 100) to prevent loops
 route-map EIGRP-TO-OSPF deny 10
- match tag 110
+ match tag 100
 
 ! Allow remaining EIGRP routes, Tag them with 90, and set OSPF Metric Type 1
 route-map EIGRP-TO-OSPF permit 20
@@ -63,7 +63,7 @@ route-map OSPF-TO-EIGRP deny 10
 
 ! Allow remaining OSPF routes and Tag them with 110
 route-map OSPF-TO-EIGRP permit 20
- set tag 110
+ set tag 100
 
 ! ==========================================================================
 ! 3. Applying the Route-Maps inside the Routing Processes
