@@ -61,7 +61,7 @@ To review the live state validation of the network control plane, DMVPN overlay,
 
 ---
 
-## 🛠️ Network Troubleshooting & Post-Mortem
+## 🛠️ Network Troubleshooting 
 
 Hands-on engineering is all about solving complex challenges. During the implementation of this multi-vendor infrastructure, I documented key technical issues, their root causes, and my step-by-step resolution processes:
 
