@@ -44,3 +44,11 @@ route-map RM-NAT-ISP1 permit 10
 ip nat inside source route-map RM-NAT-ISP2 interface Ethernet0/1 overload
 ip nat inside source route-map RM-NAT-ISP1 interface Ethernet0/0 overload
 
+✅ Verification
+After applying the configuration, a primary link failure was simulated:
+
+IP SLA detected the packet loss on ISP-2 and transition occurred.
+
+The NAT table immediately flushed stale translations.
+
+New traffic was correctly matched against RM-NAT-ISP1 and translated to ISP-1's public range, restoring outbound internet connectivity in under 30 seconds.
