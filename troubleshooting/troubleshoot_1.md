@@ -44,7 +44,8 @@ route-map RM-NAT-ISP1 permit 10
 ip nat inside source route-map RM-NAT-ISP2 interface Ethernet0/1 overload
 ip nat inside source route-map RM-NAT-ISP1 interface Ethernet0/0 overload
 
----
+```
+
 ## ✅ Verification
 After applying the configuration, a primary link failure was simulated:
 
