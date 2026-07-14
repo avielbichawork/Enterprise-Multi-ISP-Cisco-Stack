@@ -75,3 +75,14 @@ router eigrp HQ-NET
  address-family ipv4 autonomous-system 1
   topology base
    redistribute ospf 1 route-map OSPF-TO-EIGRP
+```
+## ✅ Verification & Failure Simulation
+To test the resilience of my configuration, I performed a live failover simulation:
+
+I manually shut down (shutdown) the primary interface on HQ-ROUTER-1 connected to L3 Switch A.
+
+The primary OSPF route was immediately withdrawn from Switch A's table.
+
+Thanks to the backup path, my routes were still correctly advertised through L3 Switch B.
+
+Because the loop-prevention Route-Maps denied tagged routes from being re-injected, no routing loops occurred, and end-to-end branch connectivity remained completely stable throughout the failover.
