@@ -59,3 +59,15 @@ To review the live state validation of the network control plane, DMVPN overlay,
 
 [![Verification Guide](https://img.shields.io/badge/Documentation-Verification_Guide-blue?style=for-the-badge&logo=read-the-docs&logoColor=white)](verification/verification.md)
 
+---
+
+## 🛠️ Network Troubleshooting & Post-Mortem
+
+Hands-on engineering is all about solving complex challenges. During the implementation of this multi-vendor infrastructure, I documented key technical issues, their root causes, and my step-by-step resolution processes:
+
+*   **[Case Study 1: Broken NAT Translations During ISP Failover](troubleshooting/troubleshoot_1.md)**  
+    *Resolving persistent NAT translation states on dual-homed edge paths during a simulated ISP-2 blackout.*
+*   **[Case Study 2: Mutual Redistribution & Routing Loops (EIGRP & OSPF)](troubleshooting/troubleshooting_2.md)**  
+    *Fixing "Infinity Metric" values in EIGRP Named-Mode and implementing Route-Maps with Route-Tagging to eliminate feedback loops.*
+
+---
